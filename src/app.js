@@ -3,7 +3,6 @@ import "dotenv/config";
 import fileUpload from "express-fileupload";
 
 import middleware from "./middleware/errorHandler.js";
-import createSuperAdmin from "./service/create_super_admin.js";
 import registerLoginRouter from "./routers/register_login_router.js";
 import permissionRouters from "./routers/permission.router.js";
 import transportRouter from "./routers/transport.roters.js";
@@ -19,7 +18,6 @@ const app = express();
 app.use(express.json());
 app.use(fileUpload());
 
-createSuperAdmin();
 
 app.use(registerLoginRouter);
 app.use(permissionRouters)
